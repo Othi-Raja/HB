@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="index.css">
 
 <body>
+   <div class="cont">
     <div class="bd-text">
         <span>🎉Happy</span>
         <span>Birthday</span>
@@ -18,15 +19,16 @@
         <!-- <div class=" show-ani-btn">
        </div> -->
     </div>
-    <button class="w3-display-middle" onclick="show_cake()" id="celebrate-btn"><span id="poper"></span>Let's Celebrate</button>
+    <button class="w3-display-middle " onclick="show_cake()" id="celebrate-btn"><span id="poper"></span>Let's Celebrate</button>
 
     <div id="cake-poper">
         <img src="giphy-1--unscreen.gif" alt="gif">
         <br>
         <!-- <button type="button" id="poper"></button> -->
     </div>
-<!-- 
-    <button class="w3-display-middle heart-show" onclick="show()">Touch me</button> -->
+
+   </div>
+    <button class="w3-display-bottommiddle heart-show" style=" margin-bottom: 60px;" onclick="show()">Touch me</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="animate-heart-canvas-browser.js?v=20230222171908"></script>
@@ -34,13 +36,17 @@
     <script type="module" src="index.js"></script>
     <script>
    
-
+   document.querySelector(".heart-show").style.display = 'none';
         document.getElementById("cake-poper").style.display = "none";
        
         function show_cake() {
             document.getElementById("cake-poper").style.display = "block";
             document.getElementById("celebrate-btn").style.display = "none";
             document.getElementById("poper").click();
+            setTimeout(()=>{
+            document.querySelector(".heart-show").style.display = 'block';
+
+        },3000)
         }
  
      
@@ -65,36 +71,38 @@
             });
 
 
-        // document.querySelector(".heart-show").style.display = 'none';
-        // function show() {
-        //     let queryData = getSearchData()
-        //     console.log(queryData)
-        //     let animateHeartCanvas = new AnimateHeartCanvas(
-        //         Number(queryData.hMin),
-        //         Number(queryData.hMax),
-        //         Number(queryData.countHeart),
-        //         Number(queryData.sizeMin),
-        //         Number(queryData.sizeMax),
-        //         queryData.bgColor,
-        //     )
+     
+       
+        function show() {
+            document.querySelector(".cont").style.display = 'none';
+            let queryData = getSearchData()
+            console.log(queryData)
+            let animateHeartCanvas = new AnimateHeartCanvas(
+                Number(queryData.hMin),
+                Number(queryData.hMax),
+                Number(queryData.countHeart),
+                Number(queryData.sizeMin),
+                Number(queryData.sizeMax),
+                queryData.bgColor,
+            )
 
 
-        //     function getSearchData() {
-        //         let searchString = location.search;
-        //         if (searchString) {
-        //             let obj = {};
-        //             searchString = searchString.substring(1, searchString.length);
-        //             let tempArray = searchString.split('&');
-        //             tempArray.forEach(item => {
-        //                 obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
-        //             });
-        //             return obj;
-        //         } else {
-        //             return false;
-        //         }
-        //     }
-        //     document.querySelector(".heart-show").style.display = 'none';
-        // }
+            function getSearchData() {
+                let searchString = location.search;
+                if (searchString) {
+                    let obj = {};
+                    searchString = searchString.substring(1, searchString.length);
+                    let tempArray = searchString.split('&');
+                    tempArray.forEach(item => {
+                        obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
+                    });
+                    return obj;
+                } else {
+                    return false;
+                }
+            }
+            document.querySelector(".heart-show").style.display = 'none';
+        }
 
 
     </script>
