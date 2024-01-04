@@ -1,15 +1,21 @@
 <!-- 10-12-2023 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=" 🎉Happy Birthday Name 🎉">
-    <title>HB</title>
-</head>
-<!-- w3.css -->
+    <link type="image/png" sizes="16x16" rel="icon" href="Web/icons8-party-popper-jumpicon---line-16.png">
+   <link type="image/png" sizes="32x32" rel="icon" href="Web/icons8-party-popper-jumpicon---line-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="Web/icons8-party-popper-jumpicon---line-96.png">
+    <title>Happy Birthday</title>
+    <!-- w3.css -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="index.css">
+</head>
+
+
 <body>
     <div class="cont">
         <div class="bd-text">
@@ -19,28 +25,56 @@
             <!-- <div class=" show-ani-btn">
        </div> -->
         </div>
-        <button class="w3-display-middle " onclick="show_cake()" id="celebrate-btn">
+        <button class="w3-display-middle " onclick="show_cake(),playAudio()" id="celebrate-btn">
             <span id="poper"></span>
             Let's
             Celebrate</button>
 
         <div id="cake-poper">
             <!-- cake gif -->
-            <img src="giphy-1--unscreen.gif" alt="gif">
+            <img src="giphy-1--unscreen.gif" alt="gif" draggable="false">
             <br>
             <!-- <button type="button" id="poper"></button> -->
         </div>
     </div>
-    <button disabled class="w3-display-bottommiddle heart-show" style=" margin-bottom: 60px;" onclick="show()">surprise</button>
+    <h1 id="suprise-text" class="w3-display-middle" style="font-size: xx-large;">
+        🥰Shall We Go For a Dinner To Nignt🫴
+
+    </h1>
+    <button id="celebrate-btn" disabled class="w3-display-bottommiddle heart-show"
+        style=" margin-bottom: 60px; padding-left: 20px; padding-right: 20px; cursor:not-allowed;"
+        onclick="show(),stopAudio()">surprise</button>
+    <audio id="myAudio">
+        <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     <!-- text animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- animate-heart-canvas -->
-    <script src="animate-heart-canvas-browser.js?v=20230222171908"></script>
+    <script src="animate-heart-canvas-browser.js?v=20230222171908" async></script>
     <script src="index.js"></script>
-    <script type="module" src="index.js"></script>
+    <script type="module">
+        import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+        function party() {
+            confetti();
+        }
+        document.getElementById("poper").addEventListener('click', party);
+    </script>
     <script>
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+        function stopAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.pause();
+        }
         document.querySelector(".heart-show").style.display = 'none';
         document.getElementById("cake-poper").style.display = "none";
+        document.getElementById("suprise-text").style.display = 'none';
 
         function show_cake() {
             document.getElementById("cake-poper").style.display = "block";
@@ -51,6 +85,8 @@
 
             }, 3000)
         }
+
+
         //    Text animation
         var textWrapper = document.querySelector('.bd-text');
         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -96,6 +132,7 @@
                     return false;
                 }
             }
+            document.getElementById("suprise-text").style.display = 'block';
             document.querySelector(".heart-show").style.display = 'none';
         }
 
