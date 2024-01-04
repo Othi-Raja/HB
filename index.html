@@ -37,10 +37,7 @@
             <!-- <button type="button" id="poper"></button> -->
         </div>
     </div>
-    <h1 id="suprise-text" class="w3-display-middle" style="font-size: xx-large;">
-        🥰Shall We Go For a Dinner To Nignt🫴
-
-    </h1>
+    <h1 id="suprise-text" class="w3-display-middle" style="font-size: xx-large;"></h1>
     <button id="celebrate-btn" disabled class="w3-display-bottommiddle heart-show"
         style=" margin-bottom: 60px; padding-left: 20px; padding-right: 20px; cursor:not-allowed;"
         onclick="show(),stopAudio()">surprise</button>
@@ -132,6 +129,7 @@
                     return false;
                 }
             }
+            document.getElementById('suprise-text').innerHTML =' 🥰Shall We Go For a Dinner To Nignt🫴'
             document.getElementById("suprise-text").style.display = 'block';
             document.querySelector(".heart-show").style.display = 'none';
         }
