@@ -17,7 +17,7 @@
 <body>
     <div id="loader-container">
         <div id="loader-text" class="w3-display-middle"><img src="Animation - 1705195018461.gif" alt="loader"
-                width="100%" height="100%" style="background-color: black; z-index: 3;"></div>
+                width="100%" height="100%"></div>
     </div>
     <div class="cont">
         <div class="bd-text">
@@ -83,10 +83,12 @@
         document.getElementById("poper").addEventListener('click', party);
     </script>
     <script>
+        document.getElementById("celebrate-btn").style.display = "none"
         document.addEventListener("DOMContentLoaded", function () {
             // Add a delay of 2000 milliseconds (2 seconds) before hiding the loader
             setTimeout(function () {
                 document.getElementById("loader-container").style.display = "none";
+                document.getElementById("celebrate-btn").style.display = "block"
             }, 3000);
         });
         document.addEventListener("contextmenu", function (e) {
