@@ -25,6 +25,32 @@ body {
 #cake-poper {
     text-align: center;
 }
+ .suprisebtn{
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    padding-top: 10px;
+    width: 50%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+#loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Change the background color as needed */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    z-index: 9999; /* Ensure the loader is on top of other elements */
+}
+.borderBottom{
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
 
 /* #celebrate-btn{
     text-align: center;

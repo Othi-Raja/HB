@@ -1,27 +1,29 @@
 <!-- 10-12-2023 -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=" 🎉Happy Birthday Name 🎉">
     <link type="image/png" sizes="16x16" rel="icon" href="Web/icons8-party-popper-jumpicon---line-16.png">
-   <link type="image/png" sizes="32x32" rel="icon" href="Web/icons8-party-popper-jumpicon---line-32.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="Web/icons8-party-popper-jumpicon---line-32.png">
     <link type="image/png" sizes="96x96" rel="icon" href="Web/icons8-party-popper-jumpicon---line-96.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Happy Birthday</title>
     <!-- w3.css -->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="index.css">
 </head>
-
-
 <body>
+    <div id="loader-container">
+        <div id="loader-text" class="w3-display-middle"><img src="Animation - 1705195018461.gif" alt="loader"
+                width="100%" height="100%"></div>
+    </div>
     <div class="cont">
         <div class="bd-text">
             <span>🎉Happy</span>
             <span>Birthday</span>
-            <span>Name 🎉</span>
+            <span>Lakshmi 🎉</span>
             <!-- <div class=" show-ani-btn">
        </div> -->
         </div>
@@ -29,7 +31,6 @@
             <span id="poper"></span>
             Let's
             Celebrate</button>
-
         <div id="cake-poper">
             <!-- cake gif -->
             <img src="giphy-1--unscreen.gif" alt="gif" draggable="false">
@@ -37,9 +38,29 @@
             <!-- <button type="button" id="poper"></button> -->
         </div>
     </div>
-    <h1 id="suprise-text" class="w3-display-middle" style="font-size: xx-large;"></h1>
-    <button id="celebrate-btn" disabled class="w3-display-bottommiddle heart-show"
-        style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; cursor:not-allowed;"
+    <div class="container mt-5 w3-display-middle" id="supriseContainer">
+        <h1 id="suprise-text" class="" style="font-size: xx-large; text-align: center; width: 100%;"></h1>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Polam"
+                    onclick="buttonClicked(this.value)">Icream Dating</button>
+            </div>
+            <div class="col-md-6 mb-2">
+                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Shoping"
+                    onclick="buttonClicked(this.value)">Shoping</button>
+            </div>
+            <div class="col-md-6 mb-2">
+                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Lunch"
+                    onclick="buttonClicked(this.value)">Lunch</button>
+            </div>
+            <div class="col-md-6 mb-2">
+                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Next Movie"
+                    onclick="buttonClicked(this.value)">Next Movie</button>
+            </div>
+        </div>
+    </div>
+    <button id="celebrate-btn" class="w3-display-bottommiddle heart-show"
+        style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; "
         onclick="show(),stopAudio()">surprise</button>
     <audio id="myAudio">
         <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
@@ -49,6 +70,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- animate-heart-canvas -->
     <script src="animate-heart-canvas-browser.js?v=20230222171908" async></script>
+    <!-- bootstarp cdn  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
     <script type="module">
         import confetti from 'https://cdn.skypack.dev/canvas-confetti';
@@ -58,6 +83,12 @@
         document.getElementById("poper").addEventListener('click', party);
     </script>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add a delay of 2000 milliseconds (2 seconds) before hiding the loader
+            setTimeout(function () {
+                document.getElementById("loader-container").style.display = "none";
+            }, 3000);
+        });
         document.addEventListener("contextmenu", function (e) {
             e.preventDefault();
         });
@@ -72,35 +103,31 @@
         document.querySelector(".heart-show").style.display = 'none';
         document.getElementById("cake-poper").style.display = "none";
         document.getElementById("suprise-text").style.display = 'none';
-
+        document.getElementById("supriseContainer").style.display = 'none';
         function show_cake() {
             document.getElementById("cake-poper").style.display = "block";
             document.getElementById("celebrate-btn").style.display = "none";
             document.getElementById("poper").click();
             setTimeout(() => {
                 document.querySelector(".heart-show").style.display = 'block';
-
             }, 3000)
         }
-
-
         //    Text animation
         var textWrapper = document.querySelector('.bd-text');
         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
         anime.timeline({ loop: false }) //for infinite animation change false >true
             .add({
                 targets: '.bd-text .letter',
                 opacity: [0, 1],
                 easing: "easeInOutQuad",
-                duration: 2250,
+                duration: 5550,
                 delay: (el, i) => 150 * (i + 1)
             }).add({
                 targets: '.bd-text',
                 opacity: 1,
-                duration: 1000,
+                duration: 4000,
                 easing: "easeOutExpo",
-                delay: 1000
+                delay: 5000
             });
         //   Heart animation
         function show() {
@@ -129,13 +156,18 @@
                     return false;
                 }
             }
-            document.getElementById('suprise-text').innerHTML =' 🥰Shall We Go For a Dinner To Nignt🫴'
+            document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
+            // Add click event listeners to all buttons
+            document.querySelectorAll('.suprisebtn').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Set the value directly without using a separate function
+                    document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a <span class="borderBottom">${this.value}</span>? 🫴`;
+                });
+            });
             document.getElementById("suprise-text").style.display = 'block';
+            document.getElementById("supriseContainer").style.display = 'block';
             document.querySelector(".heart-show").style.display = 'none';
         }
-
-
     </script>
 </body>
-
 </html>
