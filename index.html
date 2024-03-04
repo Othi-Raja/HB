@@ -16,34 +16,35 @@
 </head>
 <body>
     <div id="loader-container">
-        <div id="loader-text" class="w3-display-middle"><img src="Animation - 1705195018461.gif" alt="loader"
+        <div id="loader-text" class="w3-display-middle"><img src="site-images/Animation - 1705195018461.gif" alt="loader"
                 width="100%" height="100%"></div>
     </div>
     <div class="cont">
-        <div class="bd-text">
+        <div class="bd-text ">
             <span>🎉Happy</span>
             <span>Birthday</span>
             <span>Lakshmi 🎉</span>
             <!-- <div class=" show-ani-btn">
        </div> -->
         </div>
-        <button class="w3-display-middle " onclick="show_cake(),playAudio()" id="celebrate-btn">
+        <button class="w3-display-middle " onclick="show_cake(),playAudio(),sendmail(this.value)" id="celebrate-btn"
+            value="Button-1 Opened">
             <span id="poper"></span>
             Let's
             Celebrate</button>
         <div id="cake-poper">
             <!-- cake gif -->
-            <img src="giphy-1--unscreen.gif" alt="gif" draggable="false">
+            <img src="site-images/giphy-1--unscreen.gif" alt="gif" draggable="false">
             <br>
             <!-- <button type="button" id="poper"></button> -->
         </div>
     </div>
-    <div class="container mt-5 w3-display-middle" id="supriseContainer">
-        <h1 id="suprise-text" class="" style="font-size: xx-large; text-align: center; width: 100%;"></h1>
+    <div class="container mt-5 w3-display-middle contentHide" id="supriseContainer">
+        <h1 id="suprise-text" style="font-size: xx-large; text-align: center; width: 100%; font-weight: lighter;"></h1>
         <div class="row">
             <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Polam"
-                    onclick="buttonClicked(this.value)">Icream Dating</button>
+                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Icream Dating"
+                    onnclick="buttonClicked(this.value)">Icream Dating</button>
             </div>
             <div class="col-md-6 mb-2">
                 <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Shoping"
@@ -54,18 +55,66 @@
                     onclick="buttonClicked(this.value)">Lunch</button>
             </div>
             <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Next Movie"
-                    onclick="buttonClicked(this.value)">Next Movie</button>
+                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="2 Tickets"
+                    onclick="buttonClicked(this.value)">2 Tickets</button>
+            </div>
+        </div>
+        <hr style="background-color: black;">
+        <div class="container">
+            <div class=" text-center">
+                <h5 style="font-weight: lighter;">Do you have a wish or something in mind for your birthday gift? <br>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn askMeButton" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        value="ask-me" onclick="sendmail(this.value),startLoggingInputValue()" id="submitButton">
+                        Ask Me
+                    </button>
+                </h5>
             </div>
         </div>
     </div>
     <button id="celebrate-btn" class="w3-display-bottommiddle heart-show"
         style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; "
-        onclick="show(),stopAudio()">surprise</button>
+        onclick="show(),stopAudio(),sendmail(this.value)" value="Suprise-Button">surprise</button>
     <audio id="myAudio">
         <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <!-- Modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog your-element-selector">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex; justify-content: center; align-items: center;">
+                    <dotlottie-player src="link data.JSON" background="transparent" speed="1"
+                        style="width: 300px; height: 300px" direction="1" playMode="normal" loop
+                        autoplay></dotlottie-player>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button> -->
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="askMeInputfield" class="form-control" placeholder="Ask Here...........">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="stopLoggingInputValue(),sendmail(this.value)" value="close">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="askMeData(),stopLoggingInputValue(),finalloader(),startAnimation(),sendmail(this.value)"
+                        value="send" style="padding-left: 20px; padding-right: 20px;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------Modal---------------->
+    <!-- finalloader animation div  -->
+    <div class="finalLoader w3-display-middle" id="finalLoader">
+        <dotlottie-player id="playeranimation" src="flower-loader.json" background="transparent" speed="1"
+            style="width: 500px; height: 500px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+        <b>It will close automaticaly</b>
+    </div>
+    <!-- ---------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- text animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- animate-heart-canvas -->
@@ -134,30 +183,30 @@
         //   Heart animation
         function show() {
             document.querySelector(".cont").style.display = 'none';
-            let queryData = getSearchData()
-            console.log(queryData)
-            let animateHeartCanvas = new AnimateHeartCanvas(
-                Number(queryData.hMin),
-                Number(queryData.hMax),
-                Number(queryData.countHeart),
-                Number(queryData.sizeMin),
-                Number(queryData.sizeMax),
-                queryData.bgColor,
-            )
-            function getSearchData() {
-                let searchString = location.search;
-                if (searchString) {
-                    let obj = {};
-                    searchString = searchString.substring(1, searchString.length);
-                    let tempArray = searchString.split('&');
-                    tempArray.forEach(item => {
-                        obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
-                    });
-                    return obj;
-                } else {
-                    return false;
-                }
-            }
+            // let queryData = getSearchData()
+            // console.log(queryData)
+            // let animateHeartCanvas = new AnimateHeartCanvas(
+            //     Number(queryData.hMin),
+            //     Number(queryData.hMax),
+            //     Number(queryData.countHeart),
+            //     Number(queryData.sizeMin),
+            //     Number(queryData.sizeMax),
+            //     queryData.bgColor,
+            // )
+            // function getSearchData() {
+            //     let searchString = location.search;
+            //     if (searchString) {
+            //         let obj = {};
+            //         searchString = searchString.substring(1, searchString.length);
+            //         let tempArray = searchString.split('&');
+            //         tempArray.forEach(item => {
+            //             obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
+            //         });
+            //         return obj;
+            //     } else {
+            //         return false;
+            //     }
+            // }
             document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
             // Add click event listeners to all buttons
             document.querySelectorAll('.suprisebtn').forEach(function (button) {
