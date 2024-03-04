@@ -16,223 +16,224 @@
 </head>
 <body id="backgroundelement">
     <div id="loader-container">
-        <div id="loader-text" class="w3-display-middle"><img src="site-images/Animation - 1705195018461.gif" alt="loader"
-                width="100%" height="100%"></div>
+        <div id="loader-text" class="w3-display-middle"><img src="site-images/Animation - 1705195018461.gif"
+                alt="loader" width="100%" height="100%"></div>
     </div>
     <div class="container center timerhide">
         <div class="row justify-content-center align-items-center">
-          <div class="col-sm-6 text-center">
-            <div id="countdown"></div>
-          </div>
-          <div class="col-sm-6 text-center d-flex align-items-center justify-content-center">
-            <dotlottie-player id="removeShadow" src="bouncingflower.json" background="transparent" speed="1"
-                               style="width: 50%; height: 50%" direction="1" playMode="normal" loop
-                               autoplay></dotlottie-player>
-          </div>
-<footer class="w3-display-bottommiddle"  style="font-size: 15px; color: rgb(60, 64, 65) 91, 91);"> <a href="https://linktr.ee/othiraja" target="_blank"><small>Designed By Ôr </small></a></footer>          
-        </div>
-     
-    <div class="cont " id="hide">
-        <div class="bd-text ">
-            <span>🎉Happy</span>
-            <span>Birthday</span>
-            <span>Lakshmi 🎉</span>
-            <!-- <div class=" show-ani-btn">-->
-       
-        </div>
-        <button class="w3-display-middle " onclick="show_cake(),playAudio(),sendmail(this.value)" id="celebrate-btn"
-            value="Button-1 Opened">
-            <span id="poper"></span>
-            Let's
-            Celebrate</button>
-        <div id="cake-poper">
-            <!-- cake gif -->
-            <img src="site-images/giphy-1--unscreen.gif" alt="gif" draggable="false">
-            <br>
-            <!-- <button type="button" id="poper"></button> -->
-        </div>
-    </div>
-    <div class="container mt-5 w3-display-middle contentHide " id="supriseContainer">
-        <h1 id="suprise-text" style="font-size: xx-large; text-align: center; width: 100%; font-weight: lighter;"></h1>
-        <div class="row">
-            <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Icream Dating"
-                    onnclick="buttonClicked(this.value)">Icream Dating</button>
+            <div class="col-sm-6 text-center">
+                <div id="countdown"></div>
             </div>
-            <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Shoping"
-                    onclick="buttonClicked(this.value)">Shoping</button>
+            <div class="col-sm-6 text-center d-flex align-items-center justify-content-center">
+                <dotlottie-player id="removeShadow" src="bouncingflower.json" background="transparent" speed="1"
+                    style="width: 50%; height: 50%" direction="1" playMode="normal" loop autoplay></dotlottie-player>
             </div>
-            <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Lunch"
-                    onclick="buttonClicked(this.value)">Lunch</button>
+            <footer class="w3-display-bottommiddle" style="font-size: 15px; color: rgb(60, 64, 65) 91, 91);"> <a
+                    href="https://linktr.ee/othiraja" target="_blank"><small>Designed By Ôr </small></a></footer>
+        </div>
+        <div class="cont " id="hide">
+            <div class="bd-text ">
+                <span>🎉Happy</span>
+                <span>Birthday</span>
+                <span>Lakshmi 🎉</span>
+                <!-- <div class=" show-ani-btn">-->
             </div>
-            <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="2 Tickets"
-                    onclick="buttonClicked(this.value)">2 Tickets</button>
+            <button class="w3-display-middle " onclick="show_cake(),playAudio(),sendmail(this.value)" id="celebrate-btn"
+                value="Button-1 Opened">
+                <span id="poper"></span>
+                Let's
+                Celebrate</button>
+            <div id="cake-poper">
+                <!-- cake gif -->
+                <img src="site-images/giphy-1--unscreen.gif" alt="gif" draggable="false">
+                <br>
+                <!-- <button type="button" id="poper"></button> -->
             </div>
         </div>
-        <hr style="background-color: black;">
-        <div class="container">
-            <div class=" text-center">
-                <h5 style="font-weight: lighter;">Do you have a wish or something in mind for your birthday gift? <br>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn askMeButton" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        value="ask-me" onclick="sendmail(this.value),startLoggingInputValue()" id="submitButton">
-                        Ask Me
-                    </button>
-                </h5>
-            </div>
-        </div>
-    </div>
-    <button id="celebrate-btn" class="w3-display-bottommiddle heart-show"
-        style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; "
-        onclick="show(),stopAudio(),sendmail(this.value)" value="Suprise-Button">surprise</button>
-    <audio id="myAudio">
-        <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-    <!-- Modal -->
-    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog your-element-selector">
-            <div class="modal-content">
-                <div class="modal-header" style="display: flex; justify-content: center; align-items: center;">
-                    <dotlottie-player id="Shadow"  src="link data.JSON" background="transparent" speed="1"
-                        style="width: 300px; height: 300px" direction="1" playMode="normal" loop
-                        autoplay></dotlottie-player>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button> -->
+        <div class="container mt-5 w3-display-middle contentHide " id="supriseContainer">
+            <h1 id="suprise-text" style="font-size: xx-large; text-align: center; width: 100%; font-weight: lighter;">
+            </h1>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Icream Dating"
+                        onnclick="buttonClicked(this.value)">Icream Dating</button>
                 </div>
-                <div class="modal-body">
-                    <input type="text" id="askMeInputfield" class="form-control" placeholder="Ask Here...........">
+                <div class="col-md-6 mb-2">
+                    <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Shoping"
+                        onclick="buttonClicked(this.value)">Shoping</button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        onclick="stopLoggingInputValue(),sendmail(this.value)" value="close">Close</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                        onclick="askMeData(),stopLoggingInputValue(),finalloader(),startAnimation(),sendmail(this.value)"
-                        value="send" style="padding-left: 20px; padding-right: 20px;">Send</button>
+                <div class="col-md-6 mb-2">
+                    <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Lunch"
+                        onclick="buttonClicked(this.value)">Lunch</button>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="2 Tickets"
+                        onclick="buttonClicked(this.value)">2 Tickets</button>
+                </div>
+            </div>
+            <hr style="background-color: black;">
+            <div class="container">
+                <div class=" text-center">
+                    <h5 style="font-weight: lighter;">Do you have a wish or something in mind for your birthday gift?
+                        <br>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn askMeButton" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" value="ask-me"
+                            onclick="sendmail(this.value),startLoggingInputValue()" id="submitButton">
+                            Ask Me
+                        </button>
+                    </h5>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ------------Modal---------------->
-    <!-- finalloader animation div  -->
-    <div class="finalLoader w3-display-middle" id="finalLoader" style="text-align: center;">
-        <dotlottie-player id="playeranimation" src="flower-loader.json" background="transparent" speed="1"
-            style="width: 500px; height: 500px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
-        <b>It will close automaticaly After 15 seconds</b>
-    </div>
- 
-    <!-- ---------------------------- -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <!-- text animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <!-- animate-heart-canvas -->
-    <script src="animate-heart-canvas-browser.js?v=20230222171908" async></script>
-    <!-- bootstarp cdn  -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="index.js"></script>
-    <script type="module">
-        import confetti from 'https://cdn.skypack.dev/canvas-confetti';
-        function party() {
-            confetti();
-        }
-        document.getElementById("poper").addEventListener('click', party);
-    </script>
-    <script>
-        document.getElementById("celebrate-btn").style.display = "none"
-        document.addEventListener("DOMContentLoaded", function () {
-            // Add a delay of 2000 milliseconds (2 seconds) before hiding the loader
-            setTimeout(function () {
-                document.getElementById("loader-container").style.display = "none";
-                document.getElementById("celebrate-btn").style.display = "block"
-            }, 3000);
-        });
-        document.addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-        });
-        function playAudio() {
-            var audio = document.getElementById("myAudio");
-            audio.play();
-        }
-        function stopAudio() {
-            var audio = document.getElementById("myAudio");
-            audio.pause();
-        }
-        document.querySelector(".heart-show").style.display = 'none';
-        document.getElementById("cake-poper").style.display = "none";
-        document.getElementById("suprise-text").style.display = 'none';
-        document.getElementById("supriseContainer").style.display = 'none';
-        function show_cake() {
-            document.getElementById("cake-poper").style.display = "block";
-            document.getElementById("celebrate-btn").style.display = "none";
-            document.getElementById("poper").click();
-            setTimeout(() => {
-                document.querySelector(".heart-show").style.display = 'block';
-            }, 3000)
-        }
-        //    Text animation
-        var textWrapper = document.querySelector('.bd-text');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-        anime.timeline({ loop: false }) //for infinite animation change false >true
-            .add({
-                targets: '.bd-text .letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 5550,
-                delay: (el, i) => 150 * (i + 1)
-            }).add({
-                targets: '.bd-text',
-                opacity: 1,
-                duration: 4000,
-                easing: "easeOutExpo",
-                delay: 5000
+        <button id="celebrate-btn" class="w3-display-bottommiddle heart-show"
+            style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; "
+            onclick="show(),stopAudio(),sendmail(this.value)" value="Suprise-Button">surprise</button>
+        <audio id="myAudio">
+            <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog your-element-selector">
+                <div class="modal-content">
+                    <div class="modal-header" style="display: flex; justify-content: center; align-items: center;">
+                        <dotlottie-player id="Shadow" src="link data.JSON" background="transparent" speed="1"
+                            style="width: 300px; height: 300px" direction="1" playMode="normal" loop
+                            autoplay></dotlottie-player>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button> -->
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="askMeInputfield" class="form-control" placeholder="Ask Here...........">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick="stopLoggingInputValue(),sendmail(this.value)" value="close">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            onclick="askMeData(),stopLoggingInputValue(),finalloader(),startAnimation(),sendmail(this.value)"
+                            value="send" style="padding-left: 20px; padding-right: 20px;">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------Modal---------------->
+        <!-- finalloader animation div  -->
+        <div class="finalLoader w3-display-middle" id="finalLoader" style="text-align: center;">
+            <dotlottie-player id="playeranimation" src="flower-loader.json" background="transparent" speed="1"
+                style="width: 500px; height: 500px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+            <b>It will close automaticaly After 15 seconds</b>
+        </div>
+        <!-- ---------------------------- -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+            type="module"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <!-- text animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <!-- animate-heart-canvas -->
+        <script src="animate-heart-canvas-browser.js?v=20230222171908" async></script>
+        <!-- bootstarp cdn  -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="index.js"></script>
+        <script type="module">
+            import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+            function party() {
+                confetti();
+            }
+            document.getElementById("poper").addEventListener('click', party);
+        </script>
+        <script>
+            document.getElementById("celebrate-btn").style.display = "none"
+            document.addEventListener("DOMContentLoaded", function () {
+                // Add a delay of 2000 milliseconds (2 seconds) before hiding the loader
+                setTimeout(function () {
+                    document.getElementById("loader-container").style.display = "none";
+                    document.getElementById("celebrate-btn").style.display = "block"
+                }, 3000);
             });
-        //   Heart animation
-        function show() {
-            document.querySelector(".cont").style.display = 'none';
-            // let queryData = getSearchData()
-            // console.log(queryData)
-            // let animateHeartCanvas = new AnimateHeartCanvas(
-            //     Number(queryData.hMin),
-            //     Number(queryData.hMax),
-            //     Number(queryData.countHeart),
-            //     Number(queryData.sizeMin),
-            //     Number(queryData.sizeMax),
-            //     queryData.bgColor,
-            // )
-            // function getSearchData() {
-            //     let searchString = location.search;
-            //     if (searchString) {
-            //         let obj = {};
-            //         searchString = searchString.substring(1, searchString.length);
-            //         let tempArray = searchString.split('&');
-            //         tempArray.forEach(item => {
-            //             obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
-            //         });
-            //         return obj;
-            //     } else {
-            //         return false;
-            //     }
-            // }
-            document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
-            // Add click event listeners to all buttons
-            document.querySelectorAll('.suprisebtn').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Set the value directly without using a separate function
-                    document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a <span class="borderBottom">${this.value}</span>? 🫴`;
-                });
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
             });
-            document.getElementById("suprise-text").style.display = 'block';
-            document.getElementById("supriseContainer").style.display = 'block';
+            function playAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+            }
+            function stopAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.pause();
+            }
             document.querySelector(".heart-show").style.display = 'none';
-        }
-    </script>
+            document.getElementById("cake-poper").style.display = "none";
+            document.getElementById("suprise-text").style.display = 'none';
+            document.getElementById("supriseContainer").style.display = 'none';
+            function show_cake() {
+                document.getElementById("cake-poper").style.display = "block";
+                document.getElementById("celebrate-btn").style.display = "none";
+                document.getElementById("poper").click();
+                setTimeout(() => {
+                    document.querySelector(".heart-show").style.display = 'block';
+                }, 3000)
+            }
+            //    Text animation
+            var textWrapper = document.querySelector('.bd-text');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            anime.timeline({ loop: false }) //for infinite animation change false >true
+                .add({
+                    targets: '.bd-text .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 5550,
+                    delay: (el, i) => 150 * (i + 1)
+                }).add({
+                    targets: '.bd-text',
+                    opacity: 1,
+                    duration: 4000,
+                    easing: "easeOutExpo",
+                    delay: 5000
+                });
+            //   Heart animation
+            function show() {
+                document.querySelector(".cont").style.display = 'none';
+                // let queryData = getSearchData()
+                // console.log(queryData)
+                // let animateHeartCanvas = new AnimateHeartCanvas(
+                //     Number(queryData.hMin),
+                //     Number(queryData.hMax),
+                //     Number(queryData.countHeart),
+                //     Number(queryData.sizeMin),
+                //     Number(queryData.sizeMax),
+                //     queryData.bgColor,
+                // )
+                // function getSearchData() {
+                //     let searchString = location.search;
+                //     if (searchString) {
+                //         let obj = {};
+                //         searchString = searchString.substring(1, searchString.length);
+                //         let tempArray = searchString.split('&');
+                //         tempArray.forEach(item => {
+                //             obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
+                //         });
+                //         return obj;
+                //     } else {
+                //         return false;
+                //     }
+                // }
+                document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
+                // Add click event listeners to all buttons
+                document.querySelectorAll('.suprisebtn').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        // Set the value directly without using a separate function
+                        document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a <span class="borderBottom">${this.value}</span>? 🫴`;
+                    });
+                });
+                document.getElementById("suprise-text").style.display = 'block';
+                document.getElementById("supriseContainer").style.display = 'block';
+                document.querySelector(".heart-show").style.display = 'none';
+            }
+        </script>
 </body>
 </html>
