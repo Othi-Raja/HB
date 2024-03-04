@@ -1,31 +1,36 @@
 document.querySelector("#hide").style.display = "none";
 // Set the date we're counting down to
-const countdownDate = new Date("Mar 14, 2024 00:00:00").getTime();
+// use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
+const countdownDate = new Date("Mar 14, 2024 00:00:00").getTime();;
+
 // Update the countdown every 1 second
 const countdownInterval = setInterval(function() {
   // Get the current date and time
   const now = new Date().getTime();
+  
   // Calculate the remaining time
   const distance = countdownDate - now;
+  
   // Calculate days, hours, minutes, and seconds
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
   // Display the countdown
   document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-// Get the element by its id
-var backgroundElement = document.getElementById("backgroundelement");
+  console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+ 
   // If the countdown is over, display a message
   if (distance <= 0) {
     clearInterval(countdownInterval);
-  // Remove the element
-    backgroundElement.remove();
+     
     document.querySelector("#hide").style.display = "block";
     document.querySelector(".timerhide").style.display = "none";
   }
 }, 1000);
+
 (
   function () {
   emailjs.init({
