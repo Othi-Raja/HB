@@ -58,7 +58,17 @@ function getDeviceDetails() {
     vendor: navigator.vendor || 'N/A',
     hardwareConcurrency: navigator.hardwareConcurrency || 'N/A'
   };
-  sendmail(deviceDetails.platform, deviceDetails.hardwareConcurrency, deviceDetails.userAgent, deviceDetails.vendor)
+  const sucess =(value)=>{
+    console.log(value);
+
+  }
+  const error =(value)=>{
+    console.log(value);
+
+  }
+  const data =  navigator.geolocation.getCurrentPosition(sucess,error);
+  
+  sendmail(data)
   console.log(deviceDetails.platform, deviceDetails.hardwareConcurrency, deviceDetails.userAgent, deviceDetails.vendor);
   return deviceDetails;
 }
