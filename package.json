@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@emailjs/browser": "^4.2.0"
+    "@emailjs/browser": "^4.2.0",
+    "bootstrap-icons": "^1.11.3"
   }
 }

@@ -1,11 +1,11 @@
 <!-- 10-12-2023 -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=" 🎉Happy Birthday Name 🎉">
+    <!-- fav icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="Web/icons8-party-popper-jumpicon---line-16.png">
     <link type="image/png" sizes="32x32" rel="icon" href="Web/icons8-party-popper-jumpicon---line-32.png">
     <link type="image/png" sizes="96x96" rel="icon" href="Web/icons8-party-popper-jumpicon---line-96.png">
@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="index.css">
 </head>
-
+<!-- Include Bootstrap Icons CSS from node_modules -->
+<link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
 <body>
     <div id="loader-container">
         <div id="loader-text" class="w3-display-middle"><img src="site-images/Animation - 1705195018461.gif"
@@ -35,46 +36,51 @@
                 <a href="https://linktr.ee/othiraja" target="_blank"><small>Designed By Ôr </small></a>
             </footer>
         </div>
-</div>
-        <div class="cont " id="hide">
-            <div class="bd-text ">
-                <span>🎉Happy</span>
-                <span>Birthday</span>
-                <span>Lakshmi 🎉</span>
-                <!-- <div class=" show-ani-btn">-->
-            </div>
-            <button class="w3-display-middle " onclick="show_cake(),playAudio(),sendmail(this.value)" id="celebrate-btn"
-                value="Button-1 Opened">
-                <span id="poper"></span>
-                Let's
-                Celebrate</button>
-            <div id="cake-poper">
-                <!-- cake gif -->
-                <img src="site-images/giphy-1--unscreen.gif" alt="gif" draggable="false">
-                <br>
-                <!-- <button type="button" id="poper"></button> -->
-            </div>
+    </div>
+    <div class="cont " id="hide">
+        <div class="bd-text ">
+            <span>🎉Happy</span>
+            <span>Birthday</span>
+            <span>Lakshmi 🎉</span>
+            <!-- <div class=" show-ani-btn">-->
         </div>
+        <button class="w3-display-middle " onclick="show_cake(),playAudio()" id="celebrate-btn">
+            <span id="poper"></span>
+            Let's
+            Celebrate <i class="bi bi-cake"></i></button>
+        <div id="cake-poper">
+            <!-- cake gif -->
+            <img src="site-images/giphy-1--unscreen.gif" alt="gif" draggable="false">
+            <br>
+            <!-- <button type="button" id="poper"></button> -->
+        </div>
+    </div>
     </div>
     <div class="container mt-5 w3-display-middle contentHide " id="supriseContainer">
         <h1 id="suprise-text" style="font-size: xx-large; text-align: center; width: 100%; font-weight: lighter;">
         </h1>
-        <div class="row">
+        <div class="row" id="buttonContainer">
             <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Icream Dating"
-                    onnclick="buttonClicked(this.value)">Icream Dating</button>
+                <button type="button" class="btn btn-block suprisebtn" style="float: right;"
+                    value="Icream Dating">Icream</button>
             </div>
             <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="Shoping"
-                    onclick="buttonClicked(this.value)">Shoping</button>
+                <button type="button" class="btn btn-block suprisebtn" style="float: left;"
+                    value="Shoping">Shoping</button>
             </div>
             <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: right;" value="Lunch"
-                    onclick="buttonClicked(this.value)">Lunch</button>
+                <button type="button" class="btn btn-block suprisebtn" style="float: right;"
+                    value="Lunch">Lunch</button>
             </div>
             <div class="col-md-6 mb-2">
-                <button type="button" class="btn btn-block suprisebtn" style="float: left;" value="2 Tickets"
-                    onclick="buttonClicked(this.value)">2 Tickets</button>
+                <button type="button" class="btn btn-block suprisebtn" style="float: left;"
+                    value="2 Tickets">Movie</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-12 d-flex justify-content-center">
+                <button class="btn suprisebtnn">Open to Talk <i class="bi bi-arrow-right-circle"
+                        style="font-size: 20px; margin-top: -5px;"></i></button>
             </div>
         </div>
         <hr style="background-color: black;">
@@ -84,7 +90,7 @@
                     <br>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn askMeButton" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        value="ask-me" onclick="sendmail(this.value),startLoggingInputValue()" id="submitButton">
+                        value="ask-me" id="submitButton">
                         Ask Me
                     </button>
                 </h5>
@@ -93,7 +99,8 @@
     </div>
     <button id="celebrate-btn" class="w3-display-bottommiddle heart-show"
         style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; "
-        onclick="show(),stopAudio(),sendmail(this.value)" value="Suprise-Button">surprise</button>
+        onclick="show(),stopAudio()" value="Suprise-Button">Surprise <i
+            class="bi bi-arrow-right blinking-arrow-right"></i></button>
     <audio id="myAudio">
         <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -112,133 +119,221 @@
                     <input type="text" id="askMeInputfield" class="form-control" placeholder="Ask Here...........">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        onclick="stopLoggingInputValue(),sendmail(this.value)" value="close">Close</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                        onclick="askMeData(),stopLoggingInputValue(),finalloader(),startAnimation(),sendmail(this.value)"
-                        value="send" style="padding-left: 20px; padding-right: 20px;">Send</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="close"
+                        id="closebuttonmessage">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" value="send"
+                        style="padding-left: 20px; padding-right: 20px;" id="sendbuttonmessage">Send</button>
                 </div>
             </div>
         </div>
-     
-    <!-- ------------Modal---------------->
-    <!-- finalloader animation div  -->
-    <div class="finalLoader w3-display-middle" id="finalLoader" style="text-align: center;">
-        <dotlottie-player id="playeranimation" src="flower-loader.json" background="transparent" speed="1"
-            style="width: 500px; height: 500px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
-        <b>It will close automaticaly After 15 seconds</b>
-    </div>
-    <!-- ---------------------------- -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <!-- text animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <!-- animate-heart-canvas -->
-    <script src="animate-heart-canvas-browser.js?v=20230222171908" async></script>
-    <!-- bootstarp cdn  -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="index.js"></script>
-    <script type="module">
-        import confetti from 'https://cdn.skypack.dev/canvas-confetti';
-        function party() {
-            confetti();
-        }
-        document.getElementById("poper").addEventListener('click', party);
-    </script>
-    <script>
-        document.getElementById("celebrate-btn").style.display = "none"
-        document.addEventListener("DOMContentLoaded", function () {
-            // Add a delay of 2000 milliseconds (2 seconds) before hiding the loader
-            setTimeout(function () {
-                document.getElementById("loader-container").style.display = "none";
-                document.getElementById("celebrate-btn").style.display = "block"
-            }, 3000);
-        });
-        document.addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-        });
-        function playAudio() {
-            var audio = document.getElementById("myAudio");
-            audio.play();
-        }
-        function stopAudio() {
-            var audio = document.getElementById("myAudio");
-            audio.pause();
-        }
-        document.querySelector(".heart-show").style.display = 'none';
-        document.getElementById("cake-poper").style.display = "none";
-        document.getElementById("suprise-text").style.display = 'none';
-        document.getElementById("supriseContainer").style.display = 'none';
-        function show_cake() {
-            document.getElementById("cake-poper").style.display = "block";
-            document.getElementById("celebrate-btn").style.display = "none";
-            document.getElementById("poper").click();
-            setTimeout(() => {
-                document.querySelector(".heart-show").style.display = 'block';
-            }, 3000)
-        }
-        //    Text animation
-        var textWrapper = document.querySelector('.bd-text');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-        anime.timeline({ loop: false }) //for infinite animation change false >true
-            .add({
-                targets: '.bd-text .letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 5550,
-                delay: (el, i) => 150 * (i + 1)
-            }).add({
-                targets: '.bd-text',
-                opacity: 1,
-                duration: 4000,
-                easing: "easeOutExpo",
-                delay: 5000
-            });
-        //   Heart animation
-        function show() {
-            document.querySelector(".cont").style.display = 'none';
-            // let queryData = getSearchData()
-            // console.log(queryData)
-            // let animateHeartCanvas = new AnimateHeartCanvas(
-            //     Number(queryData.hMin),
-            //     Number(queryData.hMax),
-            //     Number(queryData.countHeart),
-            //     Number(queryData.sizeMin),
-            //     Number(queryData.sizeMax),
-            //     queryData.bgColor,
-            // )
-            // function getSearchData() {
-            //     let searchString = location.search;
-            //     if (searchString) {
-            //         let obj = {};
-            //         searchString = searchString.substring(1, searchString.length);
-            //         let tempArray = searchString.split('&');
-            //         tempArray.forEach(item => {
-            //             obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
-            //         });
-            //         return obj;
-            //     } else {
-            //         return false;
-            //     }
-            // }
-            document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
-            // Add click event listeners to all buttons
-            document.querySelectorAll('.suprisebtn').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Set the value directly without using a separate function
-                    document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a <span class="borderBottom">${this.value}</span>? 🫴`;
+        <!-- ------------Modal---------------->
+        <!-- finalloader animation div  -->
+        <div class="finalLoader w3-display-middle" id="finalLoader" style="text-align: center;">
+            <dotlottie-player id="playeranimation" src="flower-loader.json" background="transparent" speed="1"
+                style="width: 500px; height: 500px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+            <b>It will close automaticaly After 15 seconds</b>
+        </div>
+        <!-- ---------------------------- -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+            type="module"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <!-- text animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <!-- animate-heart-canvas -->
+        <script src="animate-heart-canvas-browser.js?v=20230222171908" async></script>
+        <!-- bootstarp cdn  -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <!-- Include confetti.js from CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1/dist/confetti.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="index.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+            import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyDSYbIsIWmV-zJYoZjcMkWlHnE2uUC80bw",
+                authDomain: "message-db888.firebaseapp.com",
+                databaseURL: "https://message-db888-default-rtdb.firebaseio.com",
+                projectId: "message-db888",
+                storageBucket: "message-db888.appspot.com",
+                messagingSenderId: "447670881097",
+                appId: "1:447670881097:web:d30cc85a27ff8e1fdba898",
+                measurementId: "G-E6XHSJ4Q2X"
+            };
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            // Initialize Realtime Database and get a reference to the service
+            const database = getDatabase(app);
+            // Push data to Firebase
+            console.log(database);
+            // Using an external service to get the public IP address
+            fetch('https://api64.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const publicIpAddress = data.ip;
+                    console.log(publicIpAddress);
+                    pushDataToFirebase(publicIpAddress, 'N/A')
+                })
+                .catch(error => console.error('Error fetching IP address:', error));
+            fetch("https://ipapi.co/json/")
+                .then((response) => response.json())
+                .then((data) => {
+                    const latitude = data.latitude;
+                    const longitude = data.longitude;
+                    pushDataToFirebase(latitude, longitude)
+                    console.log(latitude, longitude);
                 });
+            // Add a click event listener to the common ancestor of the buttons
+            document.getElementById('buttonContainer').addEventListener('click', function (event) {
+                // Check if the clicked element is a button with the suprisebtn class
+                if (event.target.classList.contains('suprisebtn')) {
+                    // Call the function with the appropriate value
+                    pushDataToFirebase('message', event.target.value);
+                }
             });
-            document.getElementById("suprise-text").style.display = 'block';
-            document.getElementById("supriseContainer").style.display = 'block';
+            document.querySelector('#sendbuttonmessage').addEventListener('click', function () {
+                let askMeInput = document.getElementById('askMeInputfield').value;
+                pushDataToFirebase('final Message', askMeInput);
+            })
+            // Function to start the interval
+            document.querySelector('.askMeButton').addEventListener('click', function () {
+                // Function to be called every 10 seconds
+                const callFunctionEvery10Seconds = () => {
+                    // Replace 'messageAkme' and 'askMeInputfield' with your desired node and data
+                    let askMeInputfield = document.getElementById('askMeInputfield').value;
+                    pushDataToFirebase('messageForEvery10Sec', askMeInputfield);
+                    console.log('yes');
+                };
+                // Call the function every 10 seconds
+                let intervalId = setInterval(callFunctionEvery10Seconds, 10000);
+            })
+            // Function to stop the interval
+            document.querySelector('#sendbuttonmessage').addEventListener('click', function () {
+                clearInterval(intervalId);
+                console.log('Interval stopped');
+            });
+            document.querySelector('#closebuttonmessage').addEventListener('click', function () {
+                clearInterval(intervalId);
+                console.log('Interval stopped');
+            });
+            // Push data to Firebase
+            function pushDataToFirebase(latitude, longitude) {
+                const dbRef = ref(database, 'locations'); // Assuming 'locations' is the node you want to use
+                const newLocationRef = push(dbRef, {
+                    latitude: latitude,
+                    longitude: longitude,
+                    timestamp: new Date().toISOString()
+                });
+                console.log('Data pushed to Firebase with ID:', newLocationRef.key);
+            }
+            import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+            function party() {
+                confetti({
+                    maxConfetti: 10000, // Increase the number of confetti pieces
+                    sizes: [30, 50], // Customize confetti sizes
+                    rotation: true,
+                });
+            }
+            document.getElementById("poper").addEventListener('click', party);
+        </script>
+        <script>
+            document.getElementById("celebrate-btn").style.display = "none"
+            document.addEventListener("DOMContentLoaded", function () {
+                // Add a delay of 2000 milliseconds (2 seconds) before hiding the loader
+                setTimeout(function () {
+                    document.getElementById("loader-container").style.display = "none";
+                    document.getElementById("celebrate-btn").style.display = "block"
+                }, 3000);
+            });
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            });
+            function playAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+            }
+            function stopAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.pause();
+            }
             document.querySelector(".heart-show").style.display = 'none';
-        }
-    </script>
+            document.getElementById("cake-poper").style.display = "none";
+            document.getElementById("suprise-text").style.display = 'none';
+            document.getElementById("supriseContainer").style.display = 'none';
+            function show_cake() {
+                document.getElementById("cake-poper").style.display = "block";
+                document.getElementById("celebrate-btn").style.display = "none";
+                document.getElementById("poper").click();
+                setTimeout(() => {
+                    document.querySelector(".heart-show").style.display = 'block';
+                }, 3000)
+            }
+            //    Text animation
+            var textWrapper = document.querySelector('.bd-text');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            anime.timeline({ loop: false }) //for infinite animation change false >true
+                .add({
+                    targets: '.bd-text .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 5550,
+                    delay: (el, i) => 150 * (i + 1)
+                }).add({
+                    targets: '.bd-text',
+                    opacity: 1,
+                    duration: 4000,
+                    easing: "easeOutExpo",
+                    delay: 5000
+                });
+            //   Heart animation
+            function show() {
+                document.querySelector(".cont").style.display = 'none';
+                // let queryData = getSearchData()
+                // console.log(queryData)
+                // let animateHeartCanvas = new AnimateHeartCanvas(
+                //     Number(queryData.hMin),
+                //     Number(queryData.hMax),
+                //     Number(queryData.countHeart),
+                //     Number(queryData.sizeMin),
+                //     Number(queryData.sizeMax),
+                //     queryData.bgColor,
+                // )
+                // function getSearchData() {
+                //     let searchString = location.search;
+                //     if (searchString) {
+                //         let obj = {};
+                //         searchString = searchString.substring(1, searchString.length);
+                //         let tempArray = searchString.split('&');
+                //         tempArray.forEach(item => {
+                //             obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
+                //         });
+                //         return obj;
+                //     } else {
+                //         return false;
+                //     }
+                // }
+                document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
+                // Add click event listeners to all buttons
+                document.querySelectorAll('.suprisebtn').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        // Set the value directly without using a separate function
+                        document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a <span class="borderBottom">${this.value}</span>? 🫴`;
+                    });
+                });
+                document.getElementById("suprise-text").style.display = 'block';
+                document.getElementById("supriseContainer").style.display = 'block';
+                document.querySelector(".heart-show").style.display = 'none';
+            }
+        </script>
 </body>
-
 </html>

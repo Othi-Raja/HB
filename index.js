@@ -1,48 +1,48 @@
-document.querySelector("#hide").style.display = "none";
-// Set the date we're counting down to
-// use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
-const countdownDate = new Date("Mar 14, 2024 00:00:00").getTime();;
-
-// Update the countdown every 1 second
-const countdownInterval = setInterval(function() {
-  // Get the current date and time
-  const now = new Date().getTime();
-  
-  // Calculate the remaining time
-  const distance = countdownDate - now;
-  
-  // Calculate days, hours, minutes, and seconds
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  // Display the countdown
-  document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-
- 
-  // If the countdown is over, display a message
-  if (distance <= 0) {
-    clearInterval(countdownInterval);
-     
-    document.querySelector("#hide").style.display = "block";
-    document.querySelector(".timerhide").style.display = "none";
-  }
-}, 1000);
-
+// document.querySelector("#hide").style.display = "none";
+// // Set the date we're counting down to
+// // use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
+// const countdownDate = new Date("Mar 14, 2024 00:00:00").getTime();;
+// // Update the countdown every 1 second
+// const countdownInterval = setInterval(function() {
+//   // Get the current date and time
+//   const now = new Date().getTime();
+//   // Calculate the remaining time
+//   const distance = countdownDate - now;
+//   // Calculate days, hours, minutes, and seconds
+//   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+//   // Display the countdown
+//   document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+//   // console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+//   // If the countdown is over, display a message
+//   if (distance <= 0) {
+//     clearInterval(countdownInterval);
+//     document.querySelector("#hide").style.display = "block";
+//     document.querySelector(".timerhide").style.display = "none";
+//   }
+// }, 1000);
+// JavaScript function to increase blur
+function increaseBlur() {
+  var bgImage = document.querySelector('.bg-image');
+  var currentBlur = parseFloat(bgImage.style.filter.replace('blur(', '').replace('px)', '')) || 0;
+  var newBlur = currentBlur + 5; // Increase blur by 5 pixels, you can adjust this value
+  bgImage.style.filter = 'blur(' + newBlur + 'px)';
+}
+document.querySelector(".timerhide").style.display = "none";
 (
   function () {
-  emailjs.init({
-    publicKey: "qlxakbjGmXlrcFsfW",
-  });
-})();
-const sendmail = async (value) => {
+    emailjs.init({
+      publicKey: "ZDKINMqnnDQgVDb62",
+    });
+  })();
+const sendmaili = async (value) => {
   let params = {
     "ubdate": value
   }
   console.log(value);
-  emailjs.send("service_q4yiq0g", "template_2wioeji", params)
+  emailjs.send("service_uxf2w8m", "template_j0c2x0f", params)
     .then(response => {
       console.log("Email sent successfully:", response);
     })
@@ -50,7 +50,8 @@ const sendmail = async (value) => {
       console.error("Error sending email:", error);
     });
 }
-window.onload = sendmail("Code : 200");
+// window.onload = sendmail("Code : 200");
+console.log("ok");
 function getDeviceDetails() {
   const deviceDetails = {
     platform: navigator.platform || 'N/A',
@@ -58,18 +59,12 @@ function getDeviceDetails() {
     vendor: navigator.vendor || 'N/A',
     hardwareConcurrency: navigator.hardwareConcurrency || 'N/A'
   };
-  const sucess =(value)=>{
+  const sucess = (value) => {
     console.log(value);
-
   }
-  const error =(value)=>{
+  const error = (value) => {
     console.log(value);
-
   }
-  const data =  navigator.geolocation.getCurrentPosition(sucess,error);
-  
-  sendmail(data)
-  console.log(deviceDetails.platform, deviceDetails.hardwareConcurrency, deviceDetails.userAgent, deviceDetails.vendor);
   return deviceDetails;
 }
 // Add an event listener to call the function when the DOM is fully loaded
@@ -106,23 +101,6 @@ let askMeData = () => {
   sendmail(askMeInputfield)
   console.log(askMeInputfield);
 }
-let intervalId;
-function startLoggingInputValue() {
-  // Assuming you have an input field with the id "askMeInputfield"
-  let askMeInputfield = document.querySelector("#askMeInputfield");
-  // Set an initial log
-  logInputValue();
-  // Set interval to log the value every 10 seconds
-  intervalId = setInterval(logInputValue, 10000);
-  function logInputValue() {
-    let inputValue = askMeInputfield.value;
-    console.log("Input field value:", inputValue);
-  }
-}
-function stopLoggingInputValue() {
-  clearInterval(intervalId);
-  console.log("Interval stopped");
-}
 document.querySelector("#finalLoader").style.display = "none";
 let finalloader = () => {
   document.querySelector(".contentHide").style.display = "none";
@@ -146,4 +124,3 @@ let finalloader = () => {
 // }
 // // Call the function to start the action
 // startLoggingInputValue();
-
