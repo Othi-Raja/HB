@@ -92,7 +92,7 @@ function closeModal() {
 function submitQuestion() {
   var userInput = document.getElementById('userInput').value;
   // You can add your logic here to handle the submitted question
-  console.log('User Question:', userInput);
+  
   // Close the modal after submission
   closeModal();
 }
