@@ -69,6 +69,33 @@ const sendmaili = async (value) => {
       console.error("Error sending email:", error);
     });
 }
+function showError(message) {
+  // Create the warning element
+  const warningElement = document.createElement('div');
+  warningElement.classList.add('error-warning');
+  warningElement.textContent = message;
+
+  // Style the warning element
+  warningElement.style.position = 'fixed';
+  warningElement.style.top = '0';
+  warningElement.style.left = '60%';
+  warningElement.style.transform = 'translateX(-50%)';
+  warningElement.style.backgroundColor = '#f44336'; // Red color, you can change it
+  warningElement.style.color = '#fff'; // White text color
+  warningElement.style.padding = '10px 20px';
+  warningElement.style.borderRadius = '5px';
+  warningElement.style.zIndex = '9999';
+  warningElement.style.fontFamily = 'Arial, Helvetica, sans-serif'; // Professional font style
+
+  // Append the warning element to the body
+  document.body.appendChild(warningElement);
+
+  // Remove the warning after a certain duration (e.g., 5 seconds)
+  setTimeout(() => {
+    document.body.removeChild(warningElement);
+  }, 5000); // Adjust the duration as needed (in milliseconds)
+}
+
 // window.onload = sendmail("Code : 200");
 console.log("ok");
 function getDeviceDetails() {
