@@ -1,5 +1,5 @@
 document.querySelector("#hide").style.display = "none";
-document.querySelector("#popupContainer").style.display = "none";
+// document.querySelector("#popupContainer").style.display = "none";
 
 // Set the date we're counting down to
 // use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
@@ -23,7 +23,7 @@ const countdownInterval = setInterval(function() {
     clearInterval(countdownInterval);
     document.querySelector("#hide").style.display = "block";
     document.querySelector(".timerhide").style.display = "none";
-    document.querySelector("#popupContainer").style.display = "block";
+    // document.querySelector("#popupContainer").style.display = "block";
   }
 }, 1000);
 // JavaScript function to increase blur
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-function closePopup() {
-  const popupContainer = document.getElementById("popupContainer");
-  popupContainer.classList.add("fadeOut"); // Add fade out effect class
-  setTimeout(() => {
-    popupContainer.style.display = "none";
-    popupContainer.classList.remove("fadeOut"); // Remove fade out effect class after transition
-  }, 500); // Adjust the time according to your transition duration
-}
+// function closePopup() {
+//   const popupContainer = document.getElementById("popupContainer");
+//   popupContainer.classList.add("fadeOut"); // Add fade out effect class
+//   setTimeout(() => {
+//     popupContainer.style.display = "none";
+//     popupContainer.classList.remove("fadeOut"); // Remove fade out effect class after transition
+//   }, 500); // Adjust the time according to your transition duration
+// }
 
 (
   function () {
