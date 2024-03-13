@@ -1,4 +1,6 @@
 document.querySelector("#hide").style.display = "none";
+document.querySelector("#popupContainer").style.display = "none";
+
 // Set the date we're counting down to
 // use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
 const countdownDate = new Date("Mar 14, 2024 00:00:00").getTime();
@@ -21,6 +23,7 @@ const countdownInterval = setInterval(function() {
     clearInterval(countdownInterval);
     document.querySelector("#hide").style.display = "block";
     document.querySelector(".timerhide").style.display = "none";
+    document.querySelector("#popupContainer").style.display = "block";
   }
 }, 1000);
 // JavaScript function to increase blur
@@ -29,6 +32,22 @@ function increaseBlur() {
   var currentBlur = parseFloat(bgImage.style.filter.replace('blur(', '').replace('px)', '')) || 0;
   var newBlur = currentBlur + 5; // Increase blur by 5 pixels, you can adjust this value
   bgImage.style.filter = 'blur(' + newBlur + 'px)';
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const popupContainer = document.getElementById("popupContainer");
+  if (!localStorage.getItem("popupShown")) {
+    popupContainer.style.display = "block";
+    localStorage.setItem("popupShown", "true");
+  }
+});
+
+function closePopup() {
+  const popupContainer = document.getElementById("popupContainer");
+  popupContainer.classList.add("fadeOut"); // Add fade out effect class
+  setTimeout(() => {
+    popupContainer.style.display = "none";
+    popupContainer.classList.remove("fadeOut"); // Remove fade out effect class after transition
+  }, 500); // Adjust the time according to your transition duration
 }
 
 (
