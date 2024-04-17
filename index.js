@@ -170,3 +170,9 @@ let finalloader = () => {
 // }
 // // Call the function to start the action
 // startLoggingInputValue();
+    // Disable right-click context menu
+    document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+      });
+  });
