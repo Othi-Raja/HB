@@ -3,7 +3,7 @@ document.querySelector("#hide").style.display = "none";
 
 // Set the date we're counting down to
 // use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
-const countdownDate =  new Date("Oct 20, 2024 00:00:00").getTime();
+const countdownDate = new Date("Oct 20, 2024 00:00:00").getTime();
 // Update the countdown every 1 second
 const countdownInterval = setInterval(function() {
   // Get the current date and time
@@ -41,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
- 
-
 // function closePopup() {
 //   const popupContainer = document.getElementById("popupContainer");
 //   popupContainer.classList.add("fadeOut"); // Add fade out effect class
@@ -51,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
 //     popupContainer.classList.remove("fadeOut"); // Remove fade out effect class after transition
 //   }, 500); // Adjust the time according to your transition duration
 // }
- 
 
 (
   function () {
@@ -147,7 +144,7 @@ function submitQuestion() {
 }
 let askMeData = () => {
   let askMeInputfield = document.querySelector("#askMeInputfield").value;
-
+  sendmail(askMeInputfield)
   console.log(askMeInputfield);
 }
 document.querySelector("#finalLoader").style.display = "none";
