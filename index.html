@@ -85,15 +85,15 @@
             </div>
             <div class="col-md-6 mb-2">
                 <button type="button" class="btn btn-block suprisebtn" style="float: left;"
-                    value="2 Tickets">Movie</button>
+                    value="Movie">Movie</button>
             </div>
         </div>
-        <div class="row" style="margin-top: 5px;">
+        <!-- <div class="row" style="margin-top: 5px;">
             <div class="col-12 d-flex justify-content-center">
                 <button class="btn suprisebtnn" onclick="showError('Oppss you dont have access Here')">Open to Talk <i class="bi bi-arrow-right-circle"
                         style="font-size: 20px; margin-top: -5px;"></i></button>
             </div>
-        </div>
+        </div> -->
         <hr style="background-color: black;">
         <div class="container">
             <div class=" text-center">
@@ -109,9 +109,8 @@
         </div>
     </div>
     <button id="celebrate-btn" class="w3-display-bottommiddle heart-show"
-        style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; "
-        onclick="show(),stopAudio()" value="Suprise-Button">Next <i
-            class="bi bi-arrow-right blinking-arrow-right"></i></button>
+        style="margin-top: 20px; margin-bottom: 60px; padding-left: 20px; padding-right: 20px; width: 100px; "
+        onclick="show(),stopAudio()" value="Suprise-Button">Next </button>
     <audio id="myAudio">
         <source src="Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -132,11 +131,14 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="close"
                         id="closebuttonmessage">Close</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" value="send"
-                        style="padding-left: 20px; padding-right: 20px;" id="sendbuttonmessage">Send</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  value="send"
+                        style="padding-left: 20px; padding-right: 20px; " id="sendbuttonmessage">Send</button>
                 </div>
             </div>
         </div>
+        <!-- ------------Modal---------------->
+        
+        
         <!-- ------------Modal---------------->
         <!-- finalloader animation div  -->
         <div class="finalLoader w3-display-middle" id="finalLoader" style="text-align: center;">
@@ -309,30 +311,30 @@
             //   Heart animation
             function show() {
                 document.querySelector(".cont").style.display = 'none';
-                // let queryData = getSearchData()
-                // console.log(queryData)
-                // let animateHeartCanvas = new AnimateHeartCanvas(
-                //     Number(queryData.hMin),
-                //     Number(queryData.hMax),
-                //     Number(queryData.countHeart),
-                //     Number(queryData.sizeMin),
-                //     Number(queryData.sizeMax),
-                //     queryData.bgColor,
-                // )
-                // function getSearchData() {
-                //     let searchString = location.search;
-                //     if (searchString) {
-                //         let obj = {};
-                //         searchString = searchString.substring(1, searchString.length);
-                //         let tempArray = searchString.split('&');
-                //         tempArray.forEach(item => {
-                //             obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
-                //         });
-                //         return obj;
-                //     } else {
-                //         return false;
-                //     }
-                // }
+                let queryData = getSearchData()
+                console.log(queryData)
+                let animateHeartCanvas = new AnimateHeartCanvas(
+                    Number(queryData.hMin),
+                    Number(queryData.hMax),
+                    Number(queryData.countHeart),
+                    Number(queryData.sizeMin),
+                    Number(queryData.sizeMax),
+                    queryData.bgColor,
+                )
+                function getSearchData() {
+                    let searchString = location.search;
+                    if (searchString) {
+                        let obj = {};
+                        searchString = searchString.substring(1, searchString.length);
+                        let tempArray = searchString.split('&');
+                        tempArray.forEach(item => {
+                            obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
+                        });
+                        return obj;
+                    } else {
+                        return false;
+                    }
+                }
                 document.getElementById('suprise-text').innerHTML = `🥰 Shall We Go For a _________? 🫴`;
                 // Add click event listeners to all buttons
                 document.querySelectorAll('.suprisebtn').forEach(function (button) {
