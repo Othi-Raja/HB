@@ -18,7 +18,7 @@ body {
     display: none;
 }
 body {
-    background-image: url('https://i.imgur.com/UMnw0tW.jpg');
+    background-image: url('./site-images/UMnw0tW.jpeg');
     font-family: 'Caveat';
     color: var(--black-color);
     user-select: none;
