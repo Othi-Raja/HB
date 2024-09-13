@@ -15,7 +15,7 @@ body {
     box-sizing: border-box;
 }
 ::-webkit-scrollbar {
-    display: none;
+    display: none; 
 }
 body {
     background-image: url('./site-images/UMnw0tW.jpeg');
