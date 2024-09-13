@@ -3,7 +3,9 @@ document.querySelector("#hide").style.display = "none";
 
 // Set the date we're counting down to
 // use new Date(new Date().getTime() + 7000).getTime() for testing (1min)
+// const countdownDate =new Date(new Date().getTime() + 7000).getTime();
 const countdownDate = new Date("Oct 20, 2024 00:00:00").getTime();
+
 // Update the countdown every 1 second
 const countdownInterval = setInterval(function() {
   // Get the current date and time
